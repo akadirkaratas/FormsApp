@@ -1,0 +1,79 @@
+# .gitignore - ASP.NET Core / .NET projeleri için öneri
+
+# Build outputs
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Publish outputs
+publish/
+**/publish/
+out/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# VS Code
+.vscode/
+
+# NuGet
+packages/
+*.nupkg
+.nuget/
+.nuget/packages/
+
+# Resharper
+_ReSharper*/
+*._ReSharper*
+
+# Logs
+*.log
+logs/
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Databases / local DB files
+*.mdf
+*.ldf
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+
+# Secrets / certificates (don't commit these)
+appsettings.Development.json
+secrets.json
+*.pfx
+*.key
+*.pem
+*.cer
+.env
+
+# Frontend / node
+node_modules/
+wwwroot/lib/
+dist/
+build/
+
+# Temp / backup
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Other
+.vagrant/
+*.log
