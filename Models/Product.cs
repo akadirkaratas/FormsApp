@@ -7,6 +7,7 @@ namespace FormApp.Models
         [Display(Name = "Urun Id")]
         public int ProductId { get; set; }
 
+        [Required]
         [Display(Name = "Urun Adi")]
 
         public string Name { get; set; } = string.Empty;
@@ -16,9 +17,9 @@ namespace FormApp.Models
 
         [Display(Name = "Resim")]
         public string Image { get; set; } = string.Empty;
-
-        public bool IsActive { get; set; }
         
+        public bool IsActive { get; set; }
+        [Display(Name = "Category")]
         public int CategoryId { get; set; }
     }
 }
