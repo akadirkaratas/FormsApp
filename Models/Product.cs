@@ -7,19 +7,27 @@ namespace FormApp.Models
         [Display(Name = "Urun Id")]
         public int ProductId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Lütfen urun adi girin")]
         [Display(Name = "Urun Adi")]
+ 
+        public string? Name { get; set; }
 
-        public string Name { get; set; } = string.Empty;
-
+        [Required]
+        [Range(1,100000 ,ErrorMessage="Lütfen 1, 100.000 arasi bir deger girin")]
         [Display(Name = "Fiyat")]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         [Display(Name = "Resim")]
-        public string Image { get; set; } = string.Empty;
+        [Required]
+        public string? Image { get; set; } = string.Empty;
         
         public bool IsActive { get; set; }
+
+
+        [Required]
         [Display(Name = "Category")]
-        public int CategoryId { get; set; }
+
+       
+        public int? CategoryId { get; set; }
     }
 }
