@@ -46,7 +46,7 @@ public class HomeController : Controller
     }
     
     [HttpPost]
-    public IActionResult Create(Product model)
+    public IActionResult Create(Product model, IFormFile imageFile)
     {
         if (ModelState.IsValid)
         {

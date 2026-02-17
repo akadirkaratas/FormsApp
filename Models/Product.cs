@@ -10,7 +10,7 @@ namespace FormApp.Models
         [Required(ErrorMessage ="Lütfen urun adi girin")]
         [Display(Name = "Urun Adi")]
  
-        public string? Name { get; set; }
+        public string Name { get; set; } = null!;
 
         [Required]
         [Range(1,100000 ,ErrorMessage="Lütfen 1, 100.000 arasi bir deger girin")]
@@ -18,7 +18,7 @@ namespace FormApp.Models
         public decimal? Price { get; set; }
 
         [Display(Name = "Resim")]
-        [Required]
+        
         public string? Image { get; set; } = string.Empty;
         
         public bool IsActive { get; set; }
