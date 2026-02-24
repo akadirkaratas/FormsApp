@@ -12,10 +12,10 @@ namespace FormApp.Models
             _categories.Add(new Category { CategoryId = 2, Name = "Bilgisayar" });
 
             _products.Add(new Product{ProductId = 1, Name ="iphone 14", Price = 40000, IsActive = true, Image="1.webp" ,CategoryId = 1 });
-            _products.Add(new Product{ProductId = 2, Name ="iphone 15", Price = 50000, IsActive = true, Image="2.webp", CategoryId = 1 });
+            _products.Add(new Product{ProductId = 2, Name ="iphone 15", Price = 50000, IsActive = false, Image="2.webp", CategoryId = 1 });
             _products.Add(new Product{ProductId = 3, Name ="iphone 16", Price = 60000, IsActive = true, Image="3.png", CategoryId = 1 });
             _products.Add(new Product{ProductId = 4, Name ="iphone 17", Price = 70000, IsActive = true, Image="4.webp", CategoryId = 1 });
-            _products.Add(new Product{ProductId = 5, Name ="Macbook Air", Price = 80000, IsActive = true, Image="5.webp", CategoryId = 2 });
+            _products.Add(new Product{ProductId = 5, Name ="Macbook Air", Price = 80000, IsActive = false, Image="5.webp", CategoryId = 2 });
             _products.Add(new Product{ProductId = 6, Name ="Macbook Pro", Price = 90000, IsActive = true, Image="6.jpeg", CategoryId = 2 });
 
         }
@@ -36,12 +36,24 @@ namespace FormApp.Models
 
             if(entity != null)
             {
-                entity.Name = updatedProduct.Name;
+                if (!string.IsNullOrEmpty(updatedProduct.Name))
+                {
+                    entity.Name = updatedProduct.Name;
+                }
                 entity.Price = updatedProduct.Price;
                 entity.Image = updatedProduct.Image;
                 entity.CategoryId = updatedProduct.CategoryId;
                 entity.IsActive = updatedProduct.IsActive;
             }
+        }
+
+        public static void EditIsActive (Product updatedProduct)
+        {
+            var entity = _products.FirstOrDefault(p => p.ProductId == updatedProduct.ProductId);
+
+           
+                entity.IsActive = updatedProduct.IsActive;
+            
         }
 
         public static void DeleteProduct(Product deletedProduct)
